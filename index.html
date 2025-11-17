@@ -2,6 +2,8 @@
 <title>THE PIZZA ARCHIVE</title>
 <a href="index.html"><img src="assets/icon.png" height="250px"></a>
 <h1>Home</h1>
+<button id="theme-toggle">Toggle Theme</button>
+
 <ul>
 
     <li><a href="top10.html">Top 10 pizzas this month</a></li>
@@ -22,3 +24,19 @@
     })
     .catch(error => console.error('Error loading file:', error));
 </script>
+
+<style>
+
+body {
+  background: white;
+  color: black;
+}
+
+body.dark-mode {
+  background: #121212;
+  color: white;
+}
+
+
+
+</style>

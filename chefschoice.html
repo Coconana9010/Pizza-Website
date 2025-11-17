@@ -16,11 +16,60 @@
 
 <div id="output"></div>
 
+<button id="theme-toggle" onclick="window.location.reload();">Toggle Theme</button>
+
 <script>
-  fetch('assets/version.txt')   // Path to your text file on the server
+ //version update
+  fetch('assets/version.txt')  
     .then(response => response.text())
     .then(text => {
       document.getElementById('output').textContent = text;
     })
     .catch(error => console.error('Error loading file:', error));
+
+    const body = document.body;
+
+  // Load saved mode
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+  }
+
+  document.getElementById("theme-toggle").addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    // Save the new mode
+    const theme = body.classList.contains("dark-mode") ? "dark" : "light";
+    localStorage.setItem("theme", theme);
+  });
+
+
+ //theme button
+  document.getElementById("theme-toggle").addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+  });
+
+
+
 </script>
+
+<style>
+
+body {
+  background: white;
+  color: black;
+}
+
+body.dark-mode {
+  background: #121212;
+  color: white;
+}
+
+h1 {
+  color: black
+}
+
+h1.dark-mode {
+  color: white
+}
+
+</style>
