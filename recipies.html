@@ -12,11 +12,16 @@
 
 </ul>
 
-<h2>v0.1</h2>
+<div id="output"></div>
 
-
-
-
+<script>
+  fetch('assets/version.txt')   // Path to your text file on the server
+    .then(response => response.text())
+    .then(text => {
+      document.getElementById('output').textContent = text;
+    })
+    .catch(error => console.error('Error loading file:', error));
+</script>
 
 from simplyrecipes.com
 <a href="https://www.simplyrecipes.com/recipes/homemade_pizza/"> visit the original post</a>
