@@ -4,12 +4,12 @@
 <h1>Recipies</h1>
 <ul>
 
-    <li><a href="top10.html">Top 10 pizzas this month</a></li>
-    <li><a href="trending.html">New and <span class="redhot">hot</span> pizzas</a></li>
+    <li><a href="top10.html"><span class= "bluecool wiggle">Top 10 Pizzas</span></a></li>
+    <li><a href="trending.html"><span class="redhot blink">New and hot pizzas</span></a></li>
     <li><a href="chefschoice.html">Chef's choice pizzas</a></li>
     <li><a href="oldclassics.html">Old classics</a></li>
     <li><a href="recipies.html"> Recipies</a></li>
-
+    
 </ul>
 
 <div id="output"></div>
@@ -88,10 +88,52 @@ color:lightblue
     text-decoration: underline red;
 }
 
-pre {
+.bluecool {
 
-    font-family: 'Times New Roman', Times, serif;
+    color: blue;
+    text-decoration: underline blue;
 }
+
+.yellowmellow {
+
+    color: red;
+    text-decoration: underline red;
+}
+
+
+.blink {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  25% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes wiggle {
+  0% { transform: rotate(0%); }
+  20% { transform: rotate(200deg); }
+  30% { transform: rotate(-200deg); }
+  40% { transform: rotate(50deg); }
+  50% { transform: rotate(50deg); }
+  60% { transform: rotate(-50deg); }
+  70% { transform: rotate(-50000000000deg); }
+  80% { transform: rotate(0deg); }
+  90% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.wiggle {
+  display: inline-block;
+  animation: wiggle 2.5s infinite;
+}
+
+.wiggle:hover {
+  animation: none;
+}
+
 </style>
 
 from simplyrecipes.com
