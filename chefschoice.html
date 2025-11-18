@@ -5,7 +5,7 @@
 <ul>
 
     <li><a href="top10.html">Top 10 pizzas this month</a></li>
-    <li><a href="trending.html">New and hot pizzas</a></li>
+    <li><a href="trending.html">New and <span class="redhot">hot</span> pizzas</a></li>
     <li><a href="chefschoice.html">Chef's choice pizzas</a></li>
     <li><a href="oldclassics.html">Old classics</a></li>
     <li><a href="recipies.html"> Recipies</a></li>
@@ -68,8 +68,26 @@ h1 {
   color: black
 }
 
-h1.dark-mode {
+body.dark-mode h1 {
   color: white
+}
+
+a {
+
+color:blue
+
+}
+
+body.dark-mode a {
+
+color:lightblue
+
+}
+
+.redhot {
+
+    color: red;
+    text-decoration: underline red;
 }
 
 </style>

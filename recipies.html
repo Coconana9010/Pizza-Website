@@ -5,7 +5,7 @@
 <ul>
 
     <li><a href="top10.html">Top 10 pizzas this month</a></li>
-    <li><a href="trending.html">New and hot pizzas</a></li>
+    <li><a href="trending.html">New and <span class="redhot">hot</span> pizzas</a></li>
     <li><a href="chefschoice.html">Chef's choice pizzas</a></li>
     <li><a href="oldclassics.html">Old classics</a></li>
     <li><a href="recipies.html"> Recipies</a></li>
@@ -14,33 +14,105 @@
 
 <div id="output"></div>
 
+<button id="theme-toggle" onclick="window.location.reload();">Toggle Theme</button>
+
 <script>
-  fetch('assets/version.txt')   // Path to your text file on the server
+ //version update
+  fetch('assets/version.txt')  
     .then(response => response.text())
     .then(text => {
       document.getElementById('output').textContent = text;
     })
     .catch(error => console.error('Error loading file:', error));
+
+    const body = document.body;
+
+  // Load saved mode
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+  }
+
+  document.getElementById("theme-toggle").addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    // Save the new mode
+    const theme = body.classList.contains("dark-mode") ? "dark" : "light";
+    localStorage.setItem("theme", theme);
+  });
+
+
+ //theme button
+  document.getElementById("theme-toggle").addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+  });
+
+
+
 </script>
+
+<style>
+
+body {
+  background: white;
+  color: black;
+}
+
+body.dark-mode {
+  background: #121212;
+  color: white;
+}
+
+h1 {
+  color: black
+}
+
+body.dark-mode h1 {
+  color: white
+}
+
+a {
+
+color:blue
+
+}
+
+body.dark-mode a {
+
+color:lightblue
+
+}
+
+.redhot {
+
+    color: red;
+    text-decoration: underline red;
+}
+
+pre {
+
+    font-family: 'Times New Roman', Times, serif;
+}
+</style>
 
 from simplyrecipes.com
 <a href="https://www.simplyrecipes.com/recipes/homemade_pizza/"> visit the original post</a>
 
 <h1>Pizza & Pizza Dough</h1>
+<pre> 
 
-
-Prep Time
+<h3>Prep Time</h3>
 30 mins
-Cook Time
+<h3>Cook Time</h3>
 30 mins
-Rise Time
-Rise Time
+<h3>Rise Time</h3>
+30 mins
+<h3>Rise Time</h3>
 90 mins
-Total Time
+<h3>Total Time</h3>
 2 hrs 30 mins
-Servings
+<h3>Servings</h3>
 4 to 6 servings
-Yield
+<h3>Yield</h3>
 2 10-inch pizzas
 The dough for this pizza yields about 2 pounds, enough for two (1-pound) balls of dough.
 
@@ -198,3 +270,4 @@ Fat
 Carbs
 10g
 Protein
+</pre>
