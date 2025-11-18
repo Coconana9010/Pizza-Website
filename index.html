@@ -8,7 +8,7 @@
 
     <li><a href="top10.html"><span class= "bluecool wiggle">Top 10 Pizzas</span></a></li>
     <li><a href="trending.html"><span class="redhot blink">New and hot pizzas</span></a></li>
-    <li><a href="chefschoice.html">Chef's choice pizzas</a></li>
+    <li><a href="chefschoice.html"><span class="yellowmellow scale">Chef's Choice</span></a></li>
     <li><a href="oldclassics.html">Old classics</a></li>
     <li><a href="recipies.html"> Recipies</a></li>
     
@@ -98,8 +98,8 @@ color:lightblue
 
 .yellowmellow {
 
-    color: red;
-    text-decoration: underline red;
+    color: brown;
+    text-decoration: underline brown;;
 }
 
 
@@ -128,13 +128,16 @@ color:lightblue
   100% { transform: rotate(0deg); }
 }
 
+@keyframes scale {
+  0% {font-size: 16px; }
+  50% {font-size: 32px; }
+}
+
 .wiggle {
   display: inline-block;
   animation: wiggle 1s infinite;
 }
 
-.wiggle:hover {
-  animation: none;
-}
+
 
 </style>
