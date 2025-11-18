@@ -129,15 +129,18 @@ color:lightblue
 }
 
 @keyframes scale {
-  0% {font-size: 16px; }
-  50% {font-size: 32px; }
+  0% { transform: scale(1); }
+  50% { transform: scale(3); }
+  100% { transform: scale(1); }
+}
+
+.scale {
+  animation: scale 2s infinite;
 }
 
 .wiggle {
   display: inline-block;
   animation: wiggle 1s infinite;
 }
-
-
 
 </style>
